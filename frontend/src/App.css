@@ -1,0 +1,198 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #343434;
+  color: white;
+}
+
+header .controls {
+  display: flex;
+  gap: 1rem;
+}
+
+aside {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  height: 100%;
+}
+
+aside h2 {
+  margin-bottom: 1rem;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside li {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+}
+
+main .left {
+  position: relative;
+  background-color: #000000; /* Ensure the panel background is consistent */
+  overflow: auto; /* Add scrolling */
+  max-height: 100%; /* Ensure it doesn't exceed the container height */
+  padding: 1rem; /* Add padding for better spacing */
+}
+
+/* Left panel styles */
+.left .code {
+  height: auto; /* Allow the content to grow dynamically */
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: transparent; /* Make the background transparent */
+  font-family: "Fira code", "Fira Mono", monospace;
+  font-size: 16px;
+  border: none; /* Remove the border to avoid the box appearance */
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+}
+
+/* Clear button styles */
+.clear {
+  position: absolute; /* Ensure the button is positioned relative to the parent container */
+  bottom: 1rem; /* Align to the bottom */
+  right: 1rem; /* Align to the right */
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.clear:hover {
+  background-color: rgb(200, 200, 255);
+}
+
+/* Right panel styles */
+main .right {
+  position:relative; /* Add this to make the .clear button position relative to the right panel */
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 16px; /* Match font size */
+  font-family: "Fira code", "Fira Mono", monospace; /* Match font family */
+  overflow: auto;
+  color: #ffffff; /* Ensure text is visible on dark background */
+}
+
+.loading {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+
+.review {
+  cursor: pointer;
+  background-color: #343434f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.review:hover {
+  background-color: #343434;
+}
+
+/* Heading styles */
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #457f7e;
+}
+
+/* Placeholder text styles */
+.placeholder {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  text-align: center;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+  pointer-events: none; /* Ensure it doesn't interfere with the content */
+  z-index: 1;
+}
+
+/* Placeholder text styles for the left panel */
+.placeholder-left {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  text-align: center;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+  pointer-events: none; /* Ensure it doesn't interfere with the editor */
+  z-index: 1;
+}
